@@ -137,3 +137,38 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+client/build/Release
+
+# Dependency directories
+client/node_modules/
+client/jspm_packages/
+# yarn v3
+client/.pnp.*
+.yarn/*
+client/!.yarn/patches
+client/!.yarn/plugins
+client/!.yarn/releases
+client/!.yarn/sdks
+client/!.yarn/versions
+
+api/node_modules/
+api/jspm_packages/
+# yarn v3
+api/.pnp.*
+.yarn/*
+api/!.yarn/patches
+api/!.yarn/plugins
+api/!.yarn/releases
+api/!.yarn/sdks
+api/!.yarn/versions
+.vscode/
+.history/*
+.snapshots/
+client/.vscode/
+client/.history/
+client/.snapshots/
+api/.vscode/
+api/.history/
+api/.snapshots/

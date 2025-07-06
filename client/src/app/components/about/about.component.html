@@ -1,0 +1,51 @@
+<section id="about" class="py-20 bg-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+        About Me
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-8"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-slide-in-left">
+        <h3 class="text-2xl font-bold mb-4 text-blue-400">Principal Software Engineer</h3>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          With over 10 years of experience in software engineering, I specialize in building scalable,
+          high-performance applications using modern technologies. My expertise spans full-stack development,
+          cloud architecture, and team leadership.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          I'm passionate about creating innovative solutions that solve complex problems and drive business growth.
+          My approach combines technical excellence with strategic thinking to deliver exceptional results.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span *ngFor="let skill of skills()"
+            class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm hover:bg-blue-700 transition-colors duration-300">
+            {{skill}}
+          </span>
+        </div>
+      </div>
+
+      <div class="animate-slide-in-right">
+        <div class="bg-gray-700 rounded-lg p-6 backdrop-blur-md bg-opacity-80">
+          <h4 class="text-xl font-semibold mb-4 text-blue-400">Core Technologies</h4>
+          <div class="space-y-4">
+            <div *ngFor="let tech of technologies()">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium">{{tech.name}}</span>
+                <span class="text-sm text-gray-400">{{tech.level}}%</span>
+              </div>
+              <div class="w-full bg-gray-600 rounded-full h-2">
+                <div
+                  class="skill-bar bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                  [style.width.%]="tech.level"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
