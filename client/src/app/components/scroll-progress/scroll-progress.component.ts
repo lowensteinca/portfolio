@@ -1,4 +1,4 @@
-mport { Component, HostListener, OnInit, signal } from '@angular/core';
+import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({

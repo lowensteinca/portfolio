@@ -1,6 +1,5 @@
-import { ChartConfig } from "../../../shared/chart/chart.model";
-import { Engineer, SiteContent, SiteModule, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary, PageRoute, NavRoute, Education, Experience } from "../schema";
-import { ContactType } from "../schema/enums";
+import { Engineer, SiteContent, SiteModule, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary, PageRoute, NavRoute, Education, Experience } from "../models";
+import { ContactType } from "../enums";
 
 export const PortfolioSlugs: string[] = [
   'aboutme',
@@ -323,29 +322,29 @@ export const PAGE_LINKS: PageRoute[] = [
 export const NAV_LINKS: NavRoute[] = [
 ];
 
-export const LineChartConfig: ChartConfig = {
-  type: 'line',
-  data: [],
-  options: { title: { text: 'Line View' } }
-};
+// export const LineChartConfig: ChartConfig = {
+//   type: 'line',
+//   data: [],
+//   options: { title: { text: 'Line View' } }
+// };
 
-export const BarChartConfig: ChartConfig = {
-  type: 'bar',
-  data: [],
-  options: { title: { text: 'Bar Breakdown' } }
-};
+// export const BarChartConfig: ChartConfig = {
+//   type: 'bar',
+//   data: [],
+//   options: { title: { text: 'Bar Breakdown' } }
+// };
 
-export const ComboChartConfig: ChartConfig = {
-  type: 'combo',
-  data: [],
-  options: { title: { text: 'Mixed Analytics' } }
-};
+// export const ComboChartConfig: ChartConfig = {
+//   type: 'combo',
+//   data: [],
+//   options: { title: { text: 'Mixed Analytics' } }
+// };
 
-export const ScatterChartConfig: ChartConfig = {
-  type: 'scatter',
-  data: [],
-  options: { title: { text: 'Time-Series Analytics' } }
-};
+// export const ScatterChartConfig: ChartConfig = {
+//   type: 'scatter',
+//   data: [],
+//   options: { title: { text: 'Time-Series Analytics' } }
+// };
 
 export const SITEMODULES: SiteModule[] = [
   {

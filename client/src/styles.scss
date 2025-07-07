@@ -1,8 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-// src/styles.scss
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+// src/styles.scss - Updated syntax
+@use 'tailwindcss/base';
+@use 'tailwindcss/components';
+@use 'tailwindcss/utilities';
+
+/* ✅ Bootstrap CSS (leave as-is since it's a plain CSS file) */
+// @use 'bootstrap/dist/css/bootstrap.min';
+
+/* ✅ Google Fonts (also CSS — leave as-is) */
+// @use 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
 
 /* Global Styles */
 * {
@@ -41,13 +47,21 @@ body {
   background: linear-gradient(180deg, #2563eb, #7c3aed);
 }
 
+/* Loading States */
+.loading {
+  @apply animate-pulse;
+}
 
-/* ✅ Bootstrap CSS (leave as-is since it's a plain CSS file) */
-@import 'bootstrap/dist/css/bootstrap.min.css';
+/* Focus States */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-900;
+}
 
-/* ✅ Google Fonts (also CSS — leave as-is) */
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
-
+/* Backdrop Blur Fallback */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
 /* ✅ SCSS File — REPLACE with `@use` */
 
 html {

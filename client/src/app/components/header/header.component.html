@@ -1,0 +1,41 @@
+
+<nav class="fixed top-0 w-full z-40 backdrop-blur-md bg-black/30 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+        &lt;Portfolio /&gt;
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a *ngFor="let item of navItems"
+              (click)="scrollToSection(item.id)"
+              class="hover:text-blue-400 transition-colors duration-300 cursor-pointer">
+            {{item.label}}
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" class="text-white hover:text-blue-400">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div *ngIf="showMobileMenu()" class="md:hidden backdrop-blur-md bg-black/30">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a *ngFor="let item of navItems"
+          (click)="scrollToSection(item.id)"
+          class="block px-3 py-2 hover:text-blue-400 transition-colors duration-300 cursor-pointer">
+        {{item.label}}
+      </a>
+    </div>
+  </div>
+</nav>
