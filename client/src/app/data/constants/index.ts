@@ -401,14 +401,27 @@ export const contact = {
   email: 'michael@lowenstein.ca',
   linkedin: 'https://linkedin.com/in/mlo2gs',
 };
-export const resumeUrl = '/assets/Michael-Lowenstein-2025.pdf';
+export const resumeUrl = '/assets/Michael-Lowenstein-Resume.pdf';
 
 // Work Experience
 export const experiences: Experience[] = [
   {
+    position: 'Senior Full-Stack Software Engineer',
+    company: '1280 Labs Inc. & Independent Contractor',
+    period: '2025-Present',
+    highlights: [
+      'Team Lead on the front-end application for new AI-enabled Talent Management CRM',
+      'Engineered a suite of backend services using Python, Node.js, and Redis',
+      'Developed and maintained Flutter-based mobile client and Angular web dashboard',
+      'Prototyping of Back-End services in different frameworks - Ruby on Rails, Golang, Rust, NodeJS, Python, .NET CORE',
+      'Architected high-throughput microservices handling concurrent user sessions and real-time data processing, implementing distributed caching strategies and horizontal scaling patterns that would translate directly to blockchain transaction processing systems',
+      'Built resilient message queue systems for cross-service communication, designing fault-tolerant architectures with retry mechanisms and dead-letter queues essential for financial transaction reliability and audit trails'
+    ],
+  },
+  {
     position: 'Senior Back-end Software Engineer (Freelance)',
     company: 'College House at House Analytics',
-    period: '2024–Present',
+    period: '2024–2025',
     highlights: [
       'Designed and implemented enterprise-scale .NET Core solutions, including CQRS Web APIs, database administration, and AWS infrastructure integration',
       'Led planning, prototyping, and deployment of back-end infrastructure for analytics products, modernizing legacy systems and creating a test automation framework',
