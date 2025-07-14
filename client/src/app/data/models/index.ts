@@ -12,8 +12,16 @@ export interface Project {
   demoUrl?: string;
   sourceUrl?: string;
   status: 'completed' | 'in-progress' | 'planned';
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface ContactSubmission {
+  name: string;
+  email?: string;
+  subject: string;
+  message: string;
+  timestamp: Date;
 }
 
 export interface Technology {
@@ -221,4 +229,34 @@ export interface Education {
   degree: string;
   school: string;
   year: string;
+}
+
+// app/interfaces/portfolio.interface.ts
+export interface Project {
+  _id?: string;
+  name: string;
+  description: string;
+  technologies: string[];
+  color: string;
+  demoUrl?: string;
+  sourceUrl?: string;
+  status: 'completed' | 'in-progress' | 'planned';
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface Skill {
+  name: string;
+  category: 'frontend' | 'backend' | 'database' | 'devops' | 'other';
+  proficiency: number; // 1-100
+}
+
+export interface ContactMessage {
+  _id?: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  status: 'new' | 'read' | 'replied';
+  createdAt: Date;
 }

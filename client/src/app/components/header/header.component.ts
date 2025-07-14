@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+// app/components/header/header.component.ts - Updated with SSR support
+import { Component, signal, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   showMobileMenu = signal(false);
+  private isBrowser: boolean;
 
   navItems = [
     { label: 'Home', id: 'home' },
@@ -18,11 +21,17 @@ export class HeaderComponent {
     { label: 'Contact', id: 'contact' }
   ];
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
   toggleMobileMenu() {
     this.showMobileMenu.update(show => !show);
   }
 
   scrollToSection(elementId: string) {
+    if (!this.isBrowser) return;
+
     this.showMobileMenu.set(false);
     const element = document.getElementById(elementId);
     if (element) {

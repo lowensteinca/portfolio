@@ -1,1 +1,42 @@
-<p>projects works!</p>
+
+<section id="projects" class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+        Featured Projects
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-8"></div>
+      <p class="text-gray-300 text-lg">A sneak preview of my ongoing and completed projects</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let project of projects(); trackBy: trackByProject"
+            class="project-card bg-gray-800 rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <div class="h-48 bg-gradient-to-br flex items-center justify-center"
+              [ngClass]="'from-' + project.color + '-400 to-' + project.color + '-600'">
+          <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-blue-400">{{project.name}}</h3>
+          <p class="text-gray-300 mb-4">{{project.description}}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span *ngFor="let tech of project.technologies"
+                  class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs hover:bg-gray-600 transition-colors duration-300">
+              {{tech}}
+            </span>
+          </div>
+          <div class="flex gap-2">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-all duration-300 transform hover:scale-105">
+              View Demo
+            </button>
+            <button class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded transition-all duration-300">
+              Source Code
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
